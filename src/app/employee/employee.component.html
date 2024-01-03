@@ -1,0 +1,35 @@
+<div class="d-flex align-items-center justify-content-center flex-column">
+    <h3 class="text-danger mt-4">employee Details</h3>
+    
+   <div class="d-flex align-items-center justify-content-center w-50 mt-4">
+        <input #user type="text" class="form-control w-100" (change)="getEmpName($event)">
+        <button (click)="userSubmit(user)" class="btn btn-success ms-3">Submit</button>
+        
+   </div>
+    <div class="row w-100">
+        <div class="col-md-1"></div>
+        
+     <div class="col-md-5">
+            <div class="mt-4 shadow w-75 text-center p-3">
+                <img [src]="empImage" alt="no image" width="300px" height="300px">
+                <h4 class="text-center mt-3">Employee name is :<span class="text-info ms-3">{{empName}}</span></h4>
+                <button  class="btn btn-primary" (click)="userAdd()">Add</button>
+            </div>
+            
+     </div>
+     <div class="col-md-5">
+        <form class="border p-4 m-5 text-center shadow">
+            <div class="mb-3">
+               <input type="text" class="form-control" placeholder="designation" name="empdesg" [(ngModel)] ="empDesg">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="salary" name="empsal" [(ngModel)]="empSalary">
+             </div>
+             <div class="mb-3">
+                <input (click)="empSbmit()" type="submit" class="btn btn-primary" value="submit">
+             </div>
+           </form>
+     </div>
+     <div class="col-md-1"></div>
+    </div>
+</div>
